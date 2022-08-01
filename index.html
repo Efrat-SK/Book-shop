@@ -1,0 +1,60 @@
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Mochiy+Pop+One&family=Square+Peg&display=swap"
+        rel="stylesheet">
+
+    <title>Book Shop</title>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <h1>Welcom to my bookshop</h1>
+
+        <section class="control-area">
+            <button class="new-book-btn" onclick="onAddBook()">Creat new book</button>
+            <select class="filter-books" onchange="onsetFilter(this.value)">
+                <option value="non">choose a filter</option> 
+                <option value="price">price</option>
+                <option value="rate">rate</option>
+            </select>
+        </section>
+
+        <table border="0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="books-container"> </tbody>
+        </table>
+
+        <div class="modal">
+            <button class="close-modal-btn" onclick="onCloseModal()">x</button>
+            <h3 class="book-name-modal">name</h3>
+            <div class="info-container">
+                <div class="book-price-modal">price: &nbsp; <span></span> </div>
+                <div class="book-rate-modal">rate: &nbsp; <div class="rate-container"> </div></div>
+            </div>
+            <p class="book-desc-modal">desc</p>
+        </div>
+    </div>
+
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: auto;
+    padding: 2rem;
+
+    max-width: 120vh;
+    max-height: 90vh;
+    background-color: #f1d2af;
+    border-radius: 10px;
+
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+button {
+    font-family: 'Cabin', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    font-weight: bold;
+}
+
+.control-area{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.new-book-btn {
+    background-color: rgb(255, 165, 80);
+    height: 25px;
+    border-width: 1.5px;
+
+}
+
+.filter-books {
+    height: 25px;
+    border-width: 1.5px;
+    font-family: 'Cabin', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    height: 50px;
+    font-weight: bold;
+}
+
+td {
+    height: 50px;
+}
+
+tr:hover {
+    background-color: rgb(255, 165, 80);
+}
+
+.action-btn {
+    border-width: 0px;
+    height: 25px;
+    color: #ddd;
+}
+
+.action-btn:hover {
+    font-weight: bold;
+}
+
+.read-btn {
+    background-color: rgb(57, 114, 199);
+}
+
+.update-btn {
+    background-color: rgb(101, 202, 34);
+}
+
+.delete-btn {
+    background-color: rgb(202, 34, 34);
+}
+
+
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+
+    margin: auto;
+
+    height: 80vh;
+    width: 23rem;
+    top: 10px;
+    padding: 0.5rem;
+
+    background-color: #9DC384;
+    border-radius: 10px;
+    text-align: center;
+
+    position: absolute;
+    left: 150%;
+}
+
+.modal.open {
+    transition: left .5s;
+    left: 30%;
+}
+
+.close-modal-btn {
+    align-self: flex-end;
+}
+
+.book-name-modal {
+    flex-basis: 1.5;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.info-container {
+    flex-basis: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    
+}
+
+.info-container span {
+    font-weight: 100;
+}
+
+.book-price-modal {
+    flex-basis: 1;
+}
+
+.book-rate-modal {
+    flex-basis: 1;
+    display: flex;
+}
+
+.book-desc-modal {
+    flex-basis: 3;
+    /* font-family: 'ariel'; */
+    font-family: 'Square Peg', cursive;
+    font-size: x-large;
+    font-weight: bold;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+    padding: 1rem;
+}
+
+.rate-container {
+    flex-basis: 1;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-family: 'ariel';
+    font-family: 'Cabin', sans-serif;
+}
+
+.rat-num {
+    width: 2rem;
+    height: 1.5rem;
+    padding: 0.1rem;
+
+    background-color: aliceblue;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: rgba(0, 0, 0, 0.596);
+}
+
+.rate-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    /* border-style: solid;
+    border-width : 0.1rem;
+    border-color: black; */
+}
