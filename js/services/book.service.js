@@ -26,7 +26,7 @@ function removeBook(bookId) {
 
 function addBook(name, price) {
     const book = _creatBook(name, price)
-    gBooks.push(book)
+    gBooks.unshift(book)
 
     _saveBooksToStorage()
 }

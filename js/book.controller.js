@@ -91,16 +91,12 @@ function onAddBook() {
     renderBooks()
 }
 
-function onChangeRate(action, bookId) {
+function onChangeRate(value, bookId) {
     const book = getBookById(bookId)
-    switch (action) {
-        case 'minos':
-            if (book.rate > 0) --book.rate
-            break;
-        case 'plus':
-            if (book.rate < 10) ++book.rate
-            break;
-    }
+    const newRate = book.rate + value
+
+    if (newRate >= 0 && newRate <= 10) book.rate = newRate
+
     renderRateArea(bookId)
 }
 
