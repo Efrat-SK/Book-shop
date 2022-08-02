@@ -2,19 +2,19 @@
 
 const STORAGE_KEY = 'bookDB'
 
+var gFilterBy = [{ maxPrice: 100 }, { minRate: 0 }]
 var gBooks
 
 function getBooksForDisplay() {
-    // if there are no books in storage - creat them. if there are books- get them.
     const books = loadFromStorage(STORAGE_KEY)
     if (!books || books === []) _creatBooks()
     else gBooks = books
+    console.log('gBooks 1: ', gBooks)
 
-    return gBooks
-}
+    var booksForDisplay = gBooks.filter(book => (book.price <= gFilterBy[0].maxPrice)
+        && (book.rate >= gFilterBy[1].minRate))
 
-function getgBooks() {
-    return gBooks
+    return booksForDisplay
 }
 
 function removeBook(bookId) {
@@ -40,15 +40,17 @@ function updateBook(bookId, bookPrice) {
 
 function getBookById(bookId) {
     const book = gBooks.find(book => book.id === bookId)
-    if (book) return book 
+    if (book) return book
     return null
 }
 
-// function setBooksFilter(filterBy = {}) {
-//     if (filterBy.vendor !== undefined) gFilterBy.vendor = filterBy.vendor
-//     if (filterBy.minSpeed !== undefined) gFilterBy.minSpeed = filterBy.minSpeed
-//     return gFilterBy
-// }
+function setBooksFilter(filterBy = {}) {
+    if (filterBy.maxPrice !== undefined) gFilterBy[0].maxPrice = filterBy.maxPrice
+    if (filterBy.minRate !== undefined) gFilterBy[1].minRate = filterBy.minRate
+
+    console.log('gFilterBy: ', gFilterBy)
+    return gFilterBy
+}
 
 function _getBookIdxById(bookId) {
     return gBooks.findIndex(book => book.id === bookId)

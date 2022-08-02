@@ -16,38 +16,57 @@
 </head>
 
 <body onload="init()">
-    <div class="container">
+    <div class="main-container">
         <h1>Welcom to my bookshop</h1>
 
         <section class="control-area">
-            <button class="new-book-btn" onclick="onAddBook()">Creat new book</button>
-            <select class="filter-books" onchange="onsetFilter(this.value)">
-                <option value="non">choose a filter</option> 
-                <option value="price">price</option>
-                <option value="rate">rate</option>
-            </select>
-        </section>
-
-        <table border="0">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody class="books-container"> </tbody>
-        </table>
-
-        <div class="modal">
-            <button class="close-modal-btn" onclick="onCloseModal()">x</button>
-            <h3 class="book-name-modal">name</h3>
-            <div class="info-container">
-                <div class="book-price-modal">price: &nbsp; <span></span> </div>
-                <div class="book-rate-modal">rate: &nbsp; <div class="rate-container"> </div></div>
+            <div class="new-book-container">
+                <button class="new-book-btn" onclick="onAddBook()">Creat new book</button>
             </div>
-            <p class="book-desc-modal">desc</p>
+            <div class="filter-container">
+                <div class="range-filters">
+                    <div class="filter-price-range-container">
+                        Max Price:
+                        <input type="range" min="0" max="100" value="100" class="filter-range filter-price-range"
+                            oninput="onSetFilterBy({maxPrice: this.value}, this ,'.filter-price-res')" />
+                        <span class="filter-price-res">100</span>
+                    </div>
+                    <div class="filter-rating-range-container">
+                        Min Rating:
+                        <input type="range" min="0" max="10" value="0" class="filter-range filter-rating-range"
+                            oninput="onSetFilterBy({minRate: this.value}, this ,'.filter-rating-res')" />
+                        <span class="filter-rating-res">0</span>
+                    </div>
+                </div>
+                <div class="search-box-filter">
+                    <input type="text" class="filter-input" onkeyup="onSetFilterBy({bookTitle: this.value})"
+                        placeholder="Search for books" />
+                </div>
+            </div>
+        </section>
+        <div class="table-container">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="books-container"> </tbody>
+            </table>
+
+            <div class="modal">
+                <button class="close-modal-btn" onclick="onCloseModal()">x</button>
+                <h3 class="book-name-modal">name</h3>
+                <div class="info-container">
+                    <div class="book-price-modal">price: &nbsp; <span></span> </div>
+                    <div class="book-rate-modal">rate: &nbsp; <div class="rate-container"> </div>
+                    </div>
+                </div>
+                <p class="book-desc-modal">desc</p>
+            </div>
         </div>
     </div>
 

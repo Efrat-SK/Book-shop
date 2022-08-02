@@ -85,7 +85,7 @@ function onRemoveBook(bookId) {
 
 function onAddBook() {
     const name = prompt('Enter book\'s name')
-    const price = prompt('Enter  book\'s price')
+    const price = +prompt('Enter  book\'s price')
 
     addBook(name, price)
     renderBooks()
@@ -100,23 +100,29 @@ function onChangeRate(value, bookId) {
     renderRateArea(bookId)
 }
 
-function onsetFilter(filter) {
-    switch (filter) {
-        case 'non':
-            console.log('none')
-            break;
-
-        case 'price':
-            console.log(filter)
-            sortBooks(filter)
-            break;
-
-        case 'rate':
-            console.log(filter)
-            sortBooks(filter)
-
-            break;
-    }
+function onSetFilterBy(filterBy, elFilter , divClass) {
+    setBooksFilter(filterBy) //[{maxPrice: 100}, {minRate: 0}]
     renderBooks()
+    document.querySelector(divClass).innerText = elFilter.value
 }
+
+// function onsetFilter(filter) {
+//     switch (filter) {
+//         case 'non':
+//             console.log('none')
+//             break;
+
+//         case 'price':
+//             console.log(filter)
+//             sortBooks(filter)
+//             break;
+
+//         case 'rate':
+//             console.log(filter)
+//             sortBooks(filter)
+
+//             break;
+//     }
+//     renderBooks()
+// }
 

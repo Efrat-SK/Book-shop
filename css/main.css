@@ -8,7 +8,7 @@ body{
     overflow-x: hidden;
 }
 
-.container {
+.main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,23 +42,57 @@ button:hover {
 
 .control-area{
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    gap: 1rem;
+}
+
+.new-book-container{
+    flex-grow: 1;
 }
 
 .new-book-btn {
     background-color: rgb(255, 165, 80);
     height: 25px;
     border-width: 1.5px;
-
 }
 
-.filter-books {
-    height: 25px;
-    border-width: 1.5px;
-    font-family: 'Cabin', sans-serif;
-    border-radius: 5px;
-    cursor: pointer;
+.filter-container{
+    flex-grow: 3;
+    gap: 1rem;
 }
+
+.filter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rang-filters{
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+}
+
+.filter-price-range-container{
+    display: flex;
+}
+
+.filter-rating-range-container{
+    display: flex;
+}
+
+.filter-price-res, .filter-rating-res{
+    width: 3rem;
+    height: 1rem;
+}
+
+/* .table-container{
+    height: 510px;
+} */
 
 table {
     border-collapse: collapse;
@@ -74,15 +108,16 @@ td {
 th {
     height: 50px;
     font-weight: bold;
+    background-color: rgb(255, 165, 80);
 }
 
 td {
     height: 50px;
 }
 
-tr:hover {
+/* tr:hover {
     background-color: rgb(255, 165, 80);
-}
+} */
 
 .action-btn {
     border-width: 0px;
